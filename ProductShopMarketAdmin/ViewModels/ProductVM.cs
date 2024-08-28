@@ -70,7 +70,7 @@ public class ProductVM:BaseViewModel
 	}
 	private int quantity;
 	[Required(ErrorMessage = "Quantity is Required")]
-	[Range(1, int.MaxValue, ErrorMessage = "Quantity must be greater than zero.")]
+	
 	public int Quantity
 	{
 		get => quantity;
@@ -82,7 +82,7 @@ public class ProductVM:BaseViewModel
 	}
 	private decimal price;
 	[Required(ErrorMessage = "Price is Required")]
-	[Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than zero.")]
+	
 	public decimal Price
 	{
 		get => price;

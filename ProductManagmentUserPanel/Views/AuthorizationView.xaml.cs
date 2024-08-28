@@ -1,29 +1,32 @@
 ﻿using ProductManagmentUserPanel.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
-namespace ProductManagmentUserPanel.Views
-{
-    /// <summary>
-    /// Interaction logic for AuthorizationView.xaml
-    /// </summary>
-    public partial class AuthorizationView : Window
+namespace ProductManagmentUserPanel.Views;
+
+
+public partial class AuthorizationView : Window
     {
         public AuthorizationView()
         {
             InitializeComponent();
             this.DataContext = new AuthorizationVM();
         }
-    }
+
+	private void SwitchToSignUp(object sender, MouseButtonEventArgs e)
+	{
+		LoginPanel.Visibility = Visibility.Collapsed;
+		SignUpPanel.Visibility = Visibility.Visible;
+	}
+
+	private void SwitchToLogin(object sender, MouseButtonEventArgs e)
+	{
+		SignUpPanel.Visibility = Visibility.Collapsed;
+		LoginPanel.Visibility = Visibility.Visible;
+	}
+
+	private void CloseApp_Click(object sender, RoutedEventArgs e)
+	{
+		Environment.Exit(0);
+	}
 }
