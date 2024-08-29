@@ -152,7 +152,20 @@
     </Page.Resources>
 
     <Grid>
-        <ListView ItemsSource="{Binding Products}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" >
+            <TextBox Width="400" Height="30" Margin="0,0,10,0"  Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Width="30" Height="30" Style="{StaticResource IconButtonStyle}">
+                <materialDesign:PackIcon Kind="Magnify" Width="20" Height="20"/>
+            </Button>
+            <Button Width="30" Height="30" Margin="10,0,0,0" Style="{StaticResource IconButtonStyle}">
+                <materialDesign:PackIcon Kind="Close" Width="20" Height="20"/>
+            </Button>
+        </StackPanel>
+        <ListView Grid.Row="1" ItemsSource="{Binding Products}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"
                ScrollViewer.HorizontalScrollBarVisibility="Auto"
                ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListView.ItemsPanel>
@@ -180,7 +193,8 @@
                             </Button>
 
                             <StackPanel Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0,10" Orientation="Horizontal">
-                                <TextBlock Text="{Binding Name}" Background="Transparent" Padding="5,2" Margin="0,0,5,0" FontWeight="Bold" FontSize="14"/>
+                                
+                                    <TextBlock Text="{Binding Name}" Background="Transparent" Padding="5,2" Margin="0,0,5,0" FontWeight="Bold" FontSize="14"/>
                                 <TextBlock Padding="5,2" Margin="0,0,5,0" FontSize="14">
                                     <TextBlock.Inlines>
                                         <Run Text="{Binding Price}" />

@@ -1,6 +1,15 @@
-﻿namespace MyApp.Data.Models.BaseEntityModel;
+﻿using System.ComponentModel;
 
-public class BaseEntity
+namespace MyApp.Data.Models.BaseEntityModel;
+
+public class BaseEntity:INotifyPropertyChanged
 {
     public int Id { get; set; }
+	protected void OnPropertyChanged(string propertyName)
+	{
+		PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+	}
+
+
+	public event PropertyChangedEventHandler? PropertyChanged;
 }

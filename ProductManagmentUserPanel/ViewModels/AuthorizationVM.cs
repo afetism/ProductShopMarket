@@ -192,9 +192,9 @@ namespace ProductManagmentUserPanel.ViewModels
 
 			if (UserData is not null && passwordManager.VerifyPassword(UserData.Password, Password))
 			{
-				
-				var mainUser = new MainUserView();
-				var mainUserVM = new MainUserVM(App.Container.GetInstance<INavigationService>());
+
+				var mainUser = App.Container.GetInstance<MainUserView>();
+				var mainUserVM = App.Container.GetInstance<MainUserVM>();
 				mainUserVM.User = UserData;
 				mainUser.DataContext = mainUserVM;
 

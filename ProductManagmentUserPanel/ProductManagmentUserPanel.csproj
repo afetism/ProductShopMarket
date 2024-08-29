@@ -10,11 +10,15 @@
 
   <ItemGroup>
     <None Remove="Images\7720186.jpg" />
+    <None Remove="Images\credit .png" />
+    <None Remove="Images\left.png" />
+    <None Remove="Images\mastercard.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
- <PackageReference Include="SimpleInjector" Version="5.5.0" />
+    <PackageReference Include="SimpleInjector" Version="5.5.0" />
+	<PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +27,18 @@
 
   <ItemGroup>
     <Resource Include="Images\7720186.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\credit .png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\left.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\mastercard.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

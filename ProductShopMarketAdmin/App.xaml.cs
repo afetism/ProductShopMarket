@@ -32,6 +32,7 @@ public partial class App : Application
 		Container.RegisterSingleton<ProductVM>();
 		Container.RegisterSingleton<AllUserVM>();
 		Container.RegisterSingleton<DashboardVM>();
+		
 
 	}
 

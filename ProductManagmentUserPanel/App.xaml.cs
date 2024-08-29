@@ -26,12 +26,15 @@ public partial class App : Application
 	private void ViewModel()
 	{
 		Container.RegisterSingleton<ProductListVM>();
-
+		Container.RegisterSingleton<CartVM>();
+		Container.RegisterSingleton<MainUserVM>();
 	}
 
 	private void View()
 	{
 		Container.RegisterSingleton<ProductListView>();
+		Container.RegisterSingleton<CartView>();
+		Container.RegisterSingleton<MainUserView>();
 	}
 	
 }
